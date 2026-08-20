@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6択のワタリ - OFFICIAL SITE</title>
+<meta name="description" content="6択のワタリ OFFICIAL SITE">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+:root{
+  --bg:#aaa6b8; --sky:#66b9e8; --ground:#8f8f93; --ink:#25153d; --purple:#652aa0; --pink:#a51c68;
+  --yellow:#ffd23f; --orange:#ff6a2a; --white:#fffdf7; --card:#f8f5ff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"DotGothic16",system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(102,185,232,.92);backdrop-filter:blur(10px);border-bottom:3px solid rgba(37,21,61,.18)}
+.nav{height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-weight:900;letter-spacing:.04em}
+.nav-links{display:flex;gap:22px;font-size:13px}
+.nav-links a:hover{color:var(--pink)}
+.hero{min-height:720px;display:grid;place-items:center;padding:70px 0 120px;position:relative;overflow:hidden;background:var(--sky)}
+.hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:120px;background:var(--ground);z-index:0}
+.hero-inner{position:relative;z-index:2}
+.hero:before{display:none}
+.hero-inner{text-align:center}
+.logo{width:min(490px,50%);height:auto;display:block;margin:0 auto 30px;filter:drop-shadow(0 14px 0 rgba(37,21,61,.16))}
+.tag{display:inline-block;background:var(--purple);color:white;border:4px solid white;padding:8px 18px;font-size:14px;box-shadow:6px 6px 0 var(--ink)}
+.cta{display:flex;justify-content:center;gap:14px;margin-top:26px;flex-wrap:wrap}
+.btn{background:var(--yellow);border:4px solid var(--ink);padding:12px 24px;box-shadow:6px 6px 0 var(--ink);font-weight:900}
+.btn.alt{background:white}.btn:hover{transform:translate(2px,2px);box-shadow:4px 4px 0 var(--ink)}
+section{padding:90px 0;background:var(--ground)}
+#about{padding-top:28px}
+.section-title{text-align:center;font-size:32px;margin:0 0 12px;color:var(--ink)}
+.section-sub{text-align:center;margin:0 auto 40px;font-size:14px;opacity:.8}
+.panel{background:var(--white);border:2px solid var(--ink);outline:3px solid var(--purple);border-radius:3px;box-shadow:0 0 0 1px rgba(37,21,61,.18) inset,7px 7px 0 rgba(37,21,61,.25);padding:42px}
+.about{max-width:780px;margin:0 auto}
+.about p{line-height:2;font-size:16px;margin:0}
+.about strong{color:var(--pink)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:var(--card);border:2px solid var(--ink);outline:3px solid var(--ink);border-radius:3px;box-shadow:0 0 0 1px rgba(37,21,61,.15) inset,5px 5px 0 rgba(37,21,61,.22);overflow:hidden}
+.shirt-img{aspect-ratio:1/1;background:#fff;display:grid;place-items:center;overflow:hidden}
+.shirt-img .product-img{width:100%;height:100%;object-fit:contain;display:block}
+.product-link{display:block;height:100%}
+.product-link:hover .product-img{transform:scale(1.025)}
+.product-img{transition:transform .18s ease}
+.card-body{padding:18px;background:white}
+.card-body h3{margin:0 0 8px;font-size:18px}.price{font-size:13px;opacity:.7}
+.video-box{background:#171021;border:5px solid var(--ink);box-shadow:10px 10px 0 var(--pink);aspect-ratio:16/9;display:grid;place-items:center;color:white;position:relative;overflow:hidden}
+.play{width:88px;height:88px;border-radius:50%;background:var(--yellow);border:5px solid white;display:grid;place-items:center;color:var(--ink);font-size:36px;padding-left:6px}
+.video-note{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-size:13px;opacity:.8}
+.content-card{padding:28px;min-height:170px}.content-card h3{margin:0 0 12px;color:var(--pink)}
+footer{padding:55px 0;background:var(--ink);color:white;text-align:center}
+footer .small{font-size:12px;opacity:.65;margin-top:14px}
+@media(max-width:760px){
+ .nav-links{display:none}.hero{min-height:620px;padding:50px 0}
+ .logo{width:72%;max-width:490px}.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.panel{padding:26px}
+ section{padding:65px 0}.section-title{font-size:27px}
+ #about{padding-top:20px}
+}
+
+.menu-toggle{position:fixed;top:18px;right:18px;z-index:50;background:#101a52;color:#fff;border:2px solid #fff;outline:3px solid #101a52;border-radius:3px;padding:10px 16px;font-family:"DotGothic16",system-ui,sans-serif;font-size:15px;letter-spacing:.08em;cursor:pointer;box-shadow:0 0 0 1px #7e88b8 inset,5px 5px 0 rgba(37,21,61,.35)}
+.menu-toggle:hover{transform:translate(1px,1px);box-shadow:0 0 0 1px #7e88b8 inset,4px 4px 0 rgba(37,21,61,.35)}
+.menu-window{position:fixed;top:74px;right:18px;z-index:49;width:min(300px,calc(100vw - 36px));background:#101a52;color:#fff;border:2px solid #fff;outline:3px solid #101a52;border-radius:3px;padding:10px;box-shadow:0 0 0 1px #7e88b8 inset,7px 7px 0 rgba(37,21,61,.35);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .15s ease,transform .15s ease,visibility .15s}
+.menu-window.open{opacity:1;visibility:visible;transform:translateY(0)}
+.menu-window a{display:block;padding:13px 16px;border:2px solid transparent;font-size:16px;letter-spacing:.05em}
+.menu-window a:before{content:"▶";display:inline-block;width:26px;opacity:0}
+.menu-window a:hover,.menu-window a:focus{border-color:#fff;outline:none;background:#19276d}
+.menu-window a:hover:before,.menu-window a:focus:before{opacity:1}
+@media(max-width:760px){.menu-toggle{top:14px;right:14px}.menu-window{top:68px;right:14px;width:min(280px,calc(100vw - 28px))}}
+
+/* Slow-moving 8-bit clouds in the main visual */
+.pixel-clouds{position:absolute;inset:0 0 120px;z-index:1;overflow:hidden;pointer-events:none}
+.pixel-cloud{position:absolute;left:110%;width:112px;height:40px;background:rgba(255,255,255,.68);clip-path:polygon(0 60%,16% 60%,16% 35%,32% 35%,32% 15%,58% 15%,58% 35%,76% 35%,76% 48%,92% 48%,92% 60%,100% 60%,100% 100%,0 100%);image-rendering:pixelated;animation:cloud-drift linear infinite;will-change:transform}
+.pixel-cloud.c1{top:14%;transform:scale(.85);animation-duration:58s;animation-delay:-18s}
+.pixel-cloud.c2{top:32%;transform:scale(1.25);opacity:.72;animation-duration:76s;animation-delay:-52s}
+.pixel-cloud.c3{top:52%;transform:scale(.65);opacity:.58;animation-duration:64s;animation-delay:-37s}
+.pixel-cloud.c4{top:68%;transform:scale(1.05);opacity:.62;animation-duration:84s;animation-delay:-70s}
+@keyframes cloud-drift{from{margin-left:0}to{margin-left:-155vw}}
+@media(max-width:760px){
+ .pixel-clouds{bottom:120px}
+ .pixel-cloud{width:88px;height:32px}
+ .pixel-cloud.c1{top:12%}.pixel-cloud.c2{top:31%}.pixel-cloud.c3{top:50%}.pixel-cloud.c4{top:67%}
+}
+@media(prefers-reduced-motion:reduce){.pixel-cloud{animation:none}.pixel-cloud.c1{left:12%}.pixel-cloud.c2{left:58%}.pixel-cloud.c3{display:none}.pixel-cloud.c4{left:34%}}
+
+.hero-pixel{position:absolute;bottom:92px;z-index:3;display:block;image-rendering:pixelated;pointer-events:none;filter:drop-shadow(4px 4px 0 rgba(37,21,61,.18))}
+.hero-pixel.watari{right:max(22px,calc((100vw - 1120px)/2));width:96px}
+.hero-pixel.slot{left:max(22px,calc((100vw - 1120px)/2));width:184px}
+@media(max-width:760px){
+ .hero-pixel{bottom:88px}
+ .hero-pixel.watari{right:12px;width:70px}
+ .hero-pixel.slot{left:8px;width:132px}
+}
+
+
+/* seamless pixel-cloud loop */
+.pixel-clouds,
+.cloud-layer,
+.clouds {
+  pointer-events: none;
+}
+
+.seamless-clouds {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.seamless-clouds__track {
+  position: absolute;
+  inset: 0 auto 0 0;
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: seamlessCloudScroll 60s linear infinite;
+}
+
+.seamless-clouds__group {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+  flex: 0 0 100vw;
+}
+
+.seamless-cloud {
+  position: absolute;
+  width: 96px;
+  height: 32px;
+  background:
+    linear-gradient(#fff 0 0) 16px 8px / 64px 16px no-repeat,
+    linear-gradient(#fff 0 0) 32px 0 / 32px 8px no-repeat,
+    linear-gradient(#fff 0 0) 0 16px / 96px 16px no-repeat;
+  image-rendering: pixelated;
+  opacity: .72;
+}
+
+.seamless-cloud--1 { top: 14%; left: 8%; transform: scale(.85); }
+.seamless-cloud--2 { top: 31%; left: 38%; transform: scale(1.15); }
+.seamless-cloud--3 { top: 18%; left: 72%; transform: scale(.65); }
+.seamless-cloud--4 { top: 43%; left: 88%; transform: scale(.95); }
+
+@keyframes seamlessCloudScroll {
+  from { transform: translate3d(0,0,0); }
+  to   { transform: translate3d(-100vw,0,0); }
+}
+
+@media (max-width: 768px) {
+  .seamless-clouds__track { animation-duration: 48s; }
+  .seamless-cloud { opacity: .62; }
+  .seamless-cloud--1 { top: 12%; left: 6%; transform: scale(.62); }
+  .seamless-cloud--2 { top: 28%; left: 36%; transform: scale(.78); }
+  .seamless-cloud--3 { top: 18%; left: 70%; transform: scale(.52); }
+  .seamless-cloud--4 { top: 40%; left: 86%; transform: scale(.68); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seamless-clouds__track { animation: none; }
+}
+
+.pixel-cloud,
+.pixel-clouds .cloud,
+.hero-cloud,
+.cloud-item {
+  display: none !important;
+}
+
+
+.product-desc{margin:0 0 14px;font-size:13px;line-height:1.7;opacity:.82}
+.product-btn{display:inline-block;background:var(--purple);color:#fff;border:2px solid var(--ink);outline:2px solid var(--purple);padding:8px 14px;font-size:13px;font-weight:900;letter-spacing:.04em;box-shadow:3px 3px 0 rgba(37,21,61,.25)}
+.product-link:hover .product-btn{transform:translate(1px,1px);box-shadow:2px 2px 0 rgba(37,21,61,.25)}
+@media(max-width:760px){
+ .card-body{padding:10px}
+ .card-body h3{font-size:13px}
+ .product-desc{font-size:10px;line-height:1.55;margin-bottom:10px}
+ .product-btn{padding:6px 8px;font-size:10px}
+}
+
+
+
+
+/* Image-based pixel city skyline */
+.pixel-city-bg{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:120px;
+  height:180px;
+  z-index:1;
+  pointer-events:none;
+  overflow:hidden;
+}
+.pixel-city-bg img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center bottom;
+  display:block;
+  image-rendering:pixelated;
+  opacity:.72;
+}
+@media(max-width:760px){
+  .pixel-city-bg{
+    bottom:120px;
+    height:120px;
+  }
+  .pixel-city-bg img{
+    opacity:.62;
+  }
+}
+
+
+
+
+
+
+
+/* 8-bit stepped corners for content frames */
+.panel,.card{
+  border-width:2px;
+  outline-width:2px;
+  border-radius:0;
+  clip-path:polygon(
+    8px 0,calc(100% - 8px) 0,
+    calc(100% - 8px) 2px,calc(100% - 4px) 2px,
+    calc(100% - 4px) 4px,calc(100% - 2px) 4px,
+    calc(100% - 2px) 8px,100% 8px,
+    100% calc(100% - 8px),calc(100% - 2px) calc(100% - 8px),
+    calc(100% - 2px) calc(100% - 4px),calc(100% - 4px) calc(100% - 4px),
+    calc(100% - 4px) calc(100% - 2px),calc(100% - 8px) calc(100% - 2px),
+    calc(100% - 8px) 100%,8px 100%,
+    8px calc(100% - 2px),4px calc(100% - 2px),
+    4px calc(100% - 4px),2px calc(100% - 4px),
+    2px calc(100% - 8px),0 calc(100% - 8px),
+    0 8px,2px 8px,2px 4px,4px 4px,4px 2px,8px 2px
+  );
+}
+.panel{box-shadow:0 0 0 1px rgba(37,21,61,.10) inset,4px 4px 0 rgba(37,21,61,.16)}
+.card{box-shadow:0 0 0 1px rgba(37,21,61,.08) inset,3px 3px 0 rgba(37,21,61,.14)}
+.shirt-img{border-radius:0}
+
+
+/* v21: clean rounded frames */
+.panel,.card{
+  border-width:2px;
+  outline-width:2px;
+  border-radius:8px;
+  clip-path:none;
+}
+.shirt-img{border-radius:6px 6px 0 0}
+
+/* Center the T-shirt CTA */
+.product-btn{
+  display:block;
+  width:max-content;
+  margin:0 auto;
+}
+
+
+/* v22: ABOUT starts closer to the hero pixel art */
+#about{padding-top:50px}
+
+
+/* v23: visual gap from hero pixel art to ABOUT panel ≈ 50px */
+#about{
+  padding-top:0;
+  margin-top:-92px;
+  position:relative;
+  z-index:3;
+}
+@media(max-width:760px){
+  #about{
+    padding-top:0;
+    margin-top:-88px;
+  }
+}
+
+
+/* v24: keep at least 40px breathing room before ABOUT */
+#about{margin-top:-52px}
+@media(max-width:760px){
+  #about{margin-top:-48px}
+}
+
+
+/* v25: about 80px breathing room before ABOUT */
+#about{margin-top:-12px}
+@media(max-width:760px){
+  #about{margin-top:-8px}
+}
+
+
+/* v26: clean T-shirt card background and stronger section titles */
+#tshirts .card,
+#tshirts .product-link,
+#tshirts .card-body{
+  background:#fff;
+}
+.section-title{
+  font-weight:900;
+}
+
+
+/* v28: city background at full opacity */
+.pixel-city-bg img{opacity:1}
+@media(max-width:760px){
+  .pixel-city-bg img{opacity:1}
+}
+
+
+/* v29: cropped city asset, anchored to the bottom */
+.pixel-city-bg{
+  bottom:120px;
+  height:180px;
+  overflow:hidden;
+}
+.pixel-city-bg img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center bottom;
+  opacity:1;
+}
+@media(max-width:760px){
+  .pixel-city-bg{
+    bottom:120px;
+    height:120px;
+  }
+  .pixel-city-bg img{
+    object-position:center bottom;
+    opacity:1;
+  }
+}
+
+
+
+
+/* v34: image + link button inside the Oshijun Challenge card */
+.content-dummy-image{
+  width:100%;
+  aspect-ratio:16/9;
+  margin:14px 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-sizing:border-box;
+  border:2px dashed rgba(37,21,61,.35);
+  background:rgba(37,21,61,.05);
+  color:rgba(37,21,61,.48);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+.content-link-btn{
+  display:block;
+  width:max-content;
+  margin:16px auto 0;
+  padding:8px 18px;
+  text-decoration:none;
+  font-weight:900;
+  color:var(--ink);
+  background:#fff;
+  border:2px solid var(--ink);
+  border-radius:4px;
+  box-shadow:2px 2px 0 rgba(37,21,61,.16);
+}
+
+
+/* v42: actual CONTENTS images supplied by user */
+.content-card-image{
+  display:block;
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:contain;
+  margin:14px 0;
+}
+
+
+/* v43: Youbun-kun x2 to the left of Watari */
+.hero-pixel.youbun{
+  width:62px;
+  bottom:92px;
+  z-index:3;
+}
+.hero-pixel.youbun-1{
+  right:max(174px,calc((100vw - 1120px)/2 + 152px));
+}
+.hero-pixel.youbun-2{
+  right:max(108px,calc((100vw - 1120px)/2 + 86px));
+}
+@media(max-width:760px){
+  .hero-pixel.youbun{
+    width:44px;
+    bottom:88px;
+  }
+  .hero-pixel.youbun-1{right:108px}
+  .hero-pixel.youbun-2{right:62px}
+}
+
+
+/* v44: approved Youbun sprites, larger beside Watari */
+.hero-pixel.youbun{width:124px;bottom:92px}
+.hero-pixel.youbun-1{right:max(278px,calc((100vw - 1120px)/2 + 256px))}
+.hero-pixel.youbun-2{right:max(150px,calc((100vw - 1120px)/2 + 128px))}
+@media(max-width:760px){
+  .hero-pixel.youbun{width:88px;bottom:88px}
+  .hero-pixel.youbun-1{right:190px}
+  .hero-pixel.youbun-2{right:100px}
+}
+
+
+/* v47: updated approved WATARI shop pixel art */
+.hero-pixel.slot{width:240px}
+@media(max-width:760px){
+  .hero-pixel.slot{width:168px}
+}
+
+
+/* v48: updated Watari pixel sprite */
+.hero-pixel.watari{width:104px}
+@media(max-width:760px){
+  .hero-pixel.watari{width:76px}
+}
+
+
+/* v49: character size corrections */
+.hero-pixel.watari{width:72px}
+.hero-pixel.youbun{width:99px}
+@media(max-width:760px){
+  .hero-pixel.watari{width:54px}
+  .hero-pixel.youbun{width:70px}
+}
+
+
+/* v52: shift Youbun-kun pair right after removing Watari */
+.hero-pixel.youbun-1{
+  right:max(150px,calc((100vw - 1120px)/2 + 128px));
+}
+.hero-pixel.youbun-2{
+  right:max(48px,calc((100vw - 1120px)/2 + 26px));
+}
+@media(max-width:760px){
+  .hero-pixel.youbun-1{right:100px}
+  .hero-pixel.youbun-2{right:28px}
+}
+
+</style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LJCVFDB978"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LJCVFDB978');
+  </script>
+  <meta property="og:image" content="img/ogp.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="img/ogp.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+</head>
+<body>
+
+<button class="menu-toggle" type="button" aria-controls="site-menu" aria-expanded="false">MENU</button>
+<nav class="menu-window" id="site-menu" aria-label="外部リンク">
+  <a href="https://x.com/watari2020" target="_blank" rel="noopener noreferrer">ツイッター</a>
+  <a href="https://suzuri.jp/6takunowatari" target="_blank" rel="noopener noreferrer">Tシャツ</a>
+  <a href="https://www.youtube.com/@6takunowatari" target="_blank" rel="noopener noreferrer">YouTube</a>
+</nav>
+
+<main>
+<section class="hero">
+
+<div class="seamless-clouds" aria-hidden="true">
+  <div class="seamless-clouds__track">
+    <div class="seamless-clouds__group">
+      <span class="seamless-cloud seamless-cloud--1"></span>
+      <span class="seamless-cloud seamless-cloud--2"></span>
+      <span class="seamless-cloud seamless-cloud--3"></span>
+      <span class="seamless-cloud seamless-cloud--4"></span>
+    </div>
+    <div class="seamless-clouds__group">
+      <span class="seamless-cloud seamless-cloud--1"></span>
+      <span class="seamless-cloud seamless-cloud--2"></span>
+      <span class="seamless-cloud seamless-cloud--3"></span>
+      <span class="seamless-cloud seamless-cloud--4"></span>
+    </div>
+  </div>
+</div>
+
+
+  <div class="pixel-clouds" aria-hidden="true">
+    <span class="pixel-cloud c1"></span>
+    <span class="pixel-cloud c2"></span>
+    <span class="pixel-cloud c3"></span>
+    <span class="pixel-cloud c4"></span>
+  </div>
+  <div class="pixel-city-bg" aria-hidden="true">
+  <img src="img/city_bg.png" alt="">
+</div>
+
+  <img class="hero-pixel youbun youbun-1" src="img/youbun_pixel_1.png" alt="" aria-hidden="true">
+    <img class="hero-pixel youbun youbun-2" src="img/youbun_pixel_2.png" alt="" aria-hidden="true">
+<img class="hero-pixel slot" src="img/slot_pixel.png" alt="" aria-hidden="true">
+  <div class="wrap hero-inner">
+    <img class="logo" src="img/logo.png" alt="6択のワタリ - OFFICIAL SITE">
+  </div>
+</section>
+
+<section id="about">
+
+<div class="wrap">
+<div class="panel about">
+      <p>6択のワタリです。<br>
+仕事をしながらたまーに、ごくたまーにスロットを打ちます。<br>
+メインの仕事は、企画・運営・コンテンツ制作・ブランディング・web制作・進行管理などです。<br>
+webに関する何でも屋みたいなイメージです。<br>
+お仕事のご依頼お待ちしております。</p>
+    </div>
+</div>
+</section>
+
+<section id="tshirts">
+
+<div class="wrap">
+    <h2 class="section-title">T-SHIRTS</h2>
+    <p class="section-sub">ワタリオリジナルデザインTシャツ。</p>
+    <div class="grid">
+      <article class="card"><a class="product-link" href="https://suzuri.jp/6takunowatari/17659287/t-shirt/s/white" target="_blank" rel="noopener noreferrer"><div class="shirt-img"><img class="product-img" src="img/tshirt_tako_win.webp" alt="TAKO WIN Tシャツ"></div><div class="card-body"><h3>TAKO WIN TEE</h3><p class="product-desc">万枚出した者にしか着ることが許されないTシャツ</p><span class="product-btn">こちらから</span></div></a></article>
+      <article class="card"><a class="product-link" href="https://suzuri.jp/6takunowatari/20255541/t-shirt/s/white" target="_blank" rel="noopener noreferrer"><div class="shirt-img"><img class="product-img" src="img/tshirt_complete.webp" alt="COMPLETE Tシャツ"></div><div class="card-body"><h3>COMPLETE TEE</h3><p class="product-desc">コンプリートした者にしか着ることが許されないTシャツ</p><span class="product-btn">こちらから</span></div></a></article>
+      <article class="card"><a class="product-link" href="https://suzuri.jp/6takunowatari/20580695/t-shirt/s/white" target="_blank" rel="noopener noreferrer"><div class="shirt-img"><img class="product-img" src="img/tshirt_youbun.webp" alt="ヨーブン Tシャツ"></div><div class="card-body"><h3>ヨーブン TEE</h3><p class="product-desc">ヨーブンなら誰でも着ていいTシャツ<br>これであなたもヨーブンです。</p><span class="product-btn">こちらから</span></div></a></article>
+    </div>
+  </div>
+</section>
+
+<section id="contents">
+
+<div class="wrap">
+    <h2 class="section-title">CONTENTS</h2>
+    <p class="section-sub">ワタリ制作コンテンツ。思いつきで作ったものを並べています</p>
+    <div class="grid">
+      <article class="card content-card">
+        <h3>デキレ何打つルーレット！</h3>
+        <img class="content-card-image" src="img/naniutu.png" alt="デキレ何打つルーレット！">
+        <p>今日何打つか決まらない時はこれ！</p>
+        <a class="content-link-btn" href="https://watari6.com/naniutu/" target="_blank" rel="noopener noreferrer">こちらから</a>
+      </article>
+      
+      <article class="card content-card">
+        <h3>押し順チャレンジ</h3>
+        <img class="content-card-image" src="img/oshijun_challenge.png" alt="押し順チャレンジ">
+        <p>6択練習用、6択ベルチャレンジ</p>
+        <a class="content-link-btn" href="https://watari6.com/rokutaku.html" target="_blank" rel="noopener noreferrer">こちらから</a>
+      </article>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="small">© 6択のワタリ. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+const menuButton=document.querySelector('.menu-toggle');
+const menuWindow=document.querySelector('.menu-window');
+function closeMenu(){menuWindow.classList.remove('open');menuButton.setAttribute('aria-expanded','false');}
+menuButton.addEventListener('click',(e)=>{e.stopPropagation();const isOpen=menuWindow.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(isOpen));});
+menuWindow.addEventListener('click',(e)=>e.stopPropagation());
+document.addEventListener('click',closeMenu);
+document.addEventListener('keydown',(e)=>{if(e.key==='Escape')closeMenu();});
+</script>
+
+</body>
+</html>

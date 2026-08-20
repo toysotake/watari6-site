@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 112" shape-rendering="crispEdges">
+  <g stroke="#171021" stroke-width="4" stroke-linejoin="miter">
+    <!-- hair -->
+    <path fill="#1f2e45" d="M26 14h12V8h28v6h10v8h8v34h-8v8H20v-8h-8V30h6v-8h8z"/>
+    <path fill="#324865" d="M30 14h30v6h12v8H24v-8h6z" stroke="none"/>
+    <path fill="#2b6b9b" d="M18 42h8v18h-8zM66 28h10v26H66z" stroke="none"/>
+    <!-- face -->
+    <path fill="#ffd8c2" d="M28 36h40v34H28z"/>
+    <rect x="34" y="46" width="8" height="8" fill="#0e1724" stroke="none"/>
+    <rect x="56" y="46" width="8" height="8" fill="#0e1724" stroke="none"/>
+    <rect x="36" y="46" width="3" height="3" fill="#fff" stroke="none"/>
+    <rect x="58" y="46" width="3" height="3" fill="#fff" stroke="none"/>
+    <path d="M44 59h10" fill="none" stroke="#9b5360"/>
+    <!-- body -->
+    <path fill="#fffdf7" d="M26 68h44v28H26z"/>
+    <path fill="#d8dbe3" d="M18 72h10v22H18zM68 72h10v22H68z"/>
+    <rect x="32" y="90" width="14" height="16" fill="#202435"/>
+    <rect x="52" y="90" width="14" height="16" fill="#202435"/>
+    <rect x="24" y="104" width="24" height="6" fill="#fff"/>
+    <rect x="50" y="104" width="24" height="6" fill="#fff"/>
+  </g>
+</svg>
