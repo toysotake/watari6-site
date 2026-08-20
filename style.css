@@ -1,0 +1,71 @@
+/* リセットCSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ベーススタイル */
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: auto;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* ヘッダー */
+header {
+  background-color: #222;
+  color: #fff;
+  padding: 40px 0;
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+/* リンクボタン */
+.links a {
+  display: inline-block;
+  margin: 20px;
+  padding: 12px 24px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.links a:hover {
+  background-color: #555;
+}
+
+/* フッター */
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .links a {
+    display: block;
+    margin: 10px auto;
+    width: 80%;
+  }
+}
